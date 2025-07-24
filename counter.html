@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Styled Counter</title>
+    <style>
+      @import url("https://fonts.cdnfonts.com/css/google-sans");
+      body {
+        background: #4d0202;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+      }
+
+      .counter-box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 600px;
+        background: #a11f57;
+        background: radial-gradient(
+          circle,
+          rgba(161, 31, 87, 1) 0%,
+          rgba(148, 187, 233, 1) 100%
+        );
+
+        border-radius: 50px;
+        box-shadow: 0 0 250px rgb(221, 210, 0);
+        padding: 10px 20px;
+        margin: 250px auto;
+      }
+
+      .counter-btn {
+        background: none;
+        border: none;
+        font-size: 104px;
+        color: #ffffff;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .count-value {
+        font-size: 104px;
+        font-weight: bold;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="counter-box">
+      <button class="counter-btn" onclick="decrease()">−</button>
+      <div class="count-value" id="count">COUNT</div>
+      <button class="counter-btn" onclick="increase()">+</button>
+    </div>
+
+    <script>
+      let count = 0;
+
+      function increase() {
+        count++;
+        document.getElementById("count").innerText = count;
+      }
+
+      function decrease() {
+        if (count > 1) {
+          count = count - 1;
+          document.getElementById("count").innerText = count;
+        }
+      }
+    </script>
+  </body>
+</html>
